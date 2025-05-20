@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -61,7 +60,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" /><link href="assets/css/plugins/hover/hover.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" />
+    <!-- Plugin CSS -->
+    <link href="assets/css/plugins/hover/hover.min.css" rel="stylesheet" />
     <link href="assets/css/plugins/owl.carousel/owl.carousel.css" rel="stylesheet" />
     <link href="assets/css/plugins/owl.carousel/owl.theme.css" rel="stylesheet" />
     <link href="assets/css/plugins/owl.carousel/owl.transitions.css" rel="stylesheet" />
@@ -88,6 +89,694 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .navbar-toggle {
+            display: block !important;
+            margin-right: 15px !important;
+            margin-top: 3px !important;
+            margin-bottom: 3px !important;
+            position: absolute !important;
+            right: 15px !important;
+            z-index: 1001 !important;
+        }
+        
+        .navbar-toggle .icon-bar {
+            display: block;
+            width: 22px;
+            height: 4px;
+            background-color: #fff;
+            margin: 5px 0;
+        }
+    
+        @media (max-width: 763px) {
+            .navbar-collapse {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #000;
+                padding: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                margin-right: 60px !important;
+                width: calc(100% - 60px) !important;
+            }
+            
+            .navbar-collapse.in {
+                display: block !important;
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .navbar-nav {
+                float: none !important;
+                margin: 0 !important;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                margin-right: 60px !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav {
+                opacity: 1;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li {
+                float: none;
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav > li {
+                opacity: 1;
+                transform: translateY(0);
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li > a {
+                padding: 15px;
+                text-align: center;
+                display: block !important;
+                visibility: visible !important;
+                color: #fff !important;
+            }
+    
+            .whatsapp-icon-icon-desktop {
+                display: none !important;
+            }
+            
+            .whatsapp-icon-mobile {
+                display: block !important;
+                position: fixed !important;
+                right: 58px !important;
+                top: -10px !important;
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+                transition: transform 0.1s linear !important;
+            }
+    
+            .navbar-collapse.in ~ .whatsapp-icon-mobile,
+            .navbar-collapse.collapsing ~ .whatsapp-icon-mobile {
+                top: -9px !important;
+            }
+        }
+    
+        @media (min-width: 764px) and (max-width: 985px) {
+            .navbar-toggle {
+                display: block !important;
+                margin-right: 15px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                position: absolute;
+                right: 15px;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            .navbar-toggle .icon-bar {
+                display: block;
+                width: 22px;
+                height: 4px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+            
+            .navbar-collapse {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #000;
+                padding: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                margin-right: 60px !important;
+                width: calc(100% - 60px) !important;
+            }
+            
+            .navbar-collapse.in {
+                display: block !important;
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .navbar-nav {
+                float: none !important;
+                margin: 0 !important;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                margin-right: 60px !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav {
+                opacity: 1;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li {
+                float: none;
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav > li {
+                opacity: 1;
+                transform: translateY(0);
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li > a {
+                padding: 15px;
+                text-align: center;
+                display: block !important;
+                visibility: visible !important;
+                color: #fff !important;
+            }
+    
+            .whatsapp-icon-mobile {
+                display: block !important;
+                position: fixed !important;
+                right: 58px !important;
+                top: 19px !important;
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+            }
+        }
+        
+        @media (max-width: 985px) {
+            .mobile-only {
+                display: block !important;
+            }
+            
+            .desktop-only {
+                display: none !important;
+            }
+            
+            .navbar-toggle {
+                display: block !important;
+                margin-right: 15px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                position: absolute;
+                right: 15px;
+            }
+            
+            .navbar-toggle .icon-bar {
+                display: block;
+                width: 22px;
+                height: 4px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+            
+            .navbar-collapse {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #000;
+                padding: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                margin-top: 10px !important;
+                margin-right: 20px !important;
+            }
+            
+            .navbar-collapse.in {
+                display: block;
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .navbar-nav {
+                float: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: table !important;
+                width: 100% !important;
+                table-layout: fixed !important;
+                margin-left: 20px !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav {
+                opacity: 1;
+            }
+            
+            .navbar-nav > li {
+                float: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                display: table-cell !important;
+                text-align: center !important;
+                vertical-align: middle !important;
+                padding-top: 5px !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav > li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .navbar-nav > li > a {
+                padding: 15px 5px !important;
+                text-align: center !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .whatsapp-icon-icon-desktop {
+                display: none !important;
+            }
+        }
+    
+        @media (min-width: 986px) {
+            /* Navbar container */
+            .navbar.navbar-fixed-top {
+                min-height: 60px !important;
+                display: flex !important;
+                align-items: center !important;
+                padding: 0 15px !important;
+            }
+    
+            /* Navbar collapse for menu */
+            .navbar .navbar-collapse.navbar-main-collapse {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                height: 60px !important;
+                padding: 0 !important;
+                margin-right: 80px !important; /* Increased to avoid overlap with WhatsApp icon */
+                background: transparent !important;
+                position: static !important;
+                border-top: none !important;
+                max-height: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+    
+            /* Menu items container */
+            .navbar .navbar-collapse .navbar-nav.desktop-only {
+                display: flex !important;
+                align-items: center !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+    
+            /* Individual menu items */
+            .navbar .navbar-nav.desktop-only > li {
+                display: inline-block !important;
+                float: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-bottom: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+    
+            /* Menu item links */
+            .navbar .navbar-nav.desktop-only > li > a {
+                padding: 10px 12px !important;
+                line-height: 1.5 !important;
+                color: #fff !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+    
+            /* Logo container */
+            .navbar .navbar-header .navbar-brand {
+                display: flex !important;
+                align-items: center !important;
+                height: 60px !important;
+                padding: 5px 15px !important;
+                margin: 0 !important;
+            }
+    
+            /* Logo image */
+            .navbar .navbar-brand img {
+                max-height: 40px !important;
+                width: auto !important;
+            }
+    
+            /* WhatsApp icon for desktop */
+            .whatsapp-icon-icon-desktop {
+                display: block !important;
+                position: absolute !important;
+                right: 58px !important; /* Match mobile position */
+                top: 19px !important; /* Match mobile position */
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+            }
+    
+            /* WhatsApp icon SVG */
+            .whatsapp-icon-icon-desktop svg {
+                width: 100% !important;
+                height: 100% !important;
+                display: block !important;
+            }
+    
+            /* Hide mobile-specific elements */
+            .mobile-only, .navbar-toggle, .whatsapp-icon-mobile {
+                display: none !important;
+            }
+    
+            /* Ensure desktop menu is visible */
+            .desktop-only {
+                display: flex !important;
+            }
+    
+            /* Consolidate whatsapp-icon-desktop styles */
+            .whatsapp-icon-desktop {
+                display: none !important; /* Hidden as whatsapp-icon-icon-desktop is used */
+            }
+        }
+    
+        /* WhatsApp icon base styles */
+        .whatsapp-icon-mobile, .whatsapp-icon-desktop {
+            transition: transform 0.1s linear !important;
+        }
+    
+        .whatsapp-icon-mobile svg, .whatsapp-icon-desktop svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    
+        /* Scroll styles */
+        .navbar-fixed-top {
+            transition: all 0.1s linear;
+        }
+    
+        .navbar-fixed-top.scrolled {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    
+        .whatsapp-icon-mobile.scrolled, .whatsapp-icon-icon-desktop.scrolled {
+            transform: translateY(-20px) !important;
+        }
+
+        @media (max-width: 895px) {
+            .navbar-toggle {
+                display: block !important;
+                margin-right: 15px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                position: absolute;
+                right: 15px;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            .navbar-toggle .icon-bar {
+                display: block;
+                width: 22px;
+                height: 4px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+            
+            .navbar-collapse {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #000;
+                padding: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                margin-right: 60px !important;
+                width: calc(100% - 60px) !important;
+            }
+            
+            .navbar-collapse.in {
+                display: block !important;
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .navbar-nav {
+                float: none !important;
+                margin: 0 !important;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                margin-right: 60px !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav {
+                opacity: 1;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li {
+                float: none;
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-collapse.in .navbar-nav > li {
+                opacity: 1;
+                transform: translateY(0);
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li > a {
+                padding: 15px;
+                text-align: center;
+                display: block !important;
+                visibility: visible !important;
+                color: #fff !important;
+            }
+
+            .whatsapp-icon-icon-desktop {
+                display: none !important;
+            }
+            
+            .whatsapp-icon-mobile {
+                display: block !important;
+                position: fixed !important;
+                right: 58px !important;
+                top: 19px !important;
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+            }
+        }
+
+        @media (min-width: 896px) {
+            .navbar-toggle {
+                display: none !important;
+            }
+            
+            .navbar-collapse {
+                display: block !important;
+                max-height: none !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: static !important;
+                background-color: transparent !important;
+                border-top: none !important;
+                padding: 0 !important;
+            }
+            
+            .navbar-nav {
+                display: block !important;
+                float: right !important;
+                margin-right: 60px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li {
+                display: inline-block !important;
+                float: left !important;
+                border-bottom: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
+            }
+            
+            .navbar-nav > li > a {
+                display: block !important;
+                padding: 15px 10px !important;
+                color: #fff !important;
+                visibility: visible !important;
+            }
+
+            .whatsapp-icon-mobile {
+                display: none !important;
+            }
+            
+            .whatsapp-icon-icon-desktop {
+                display: block !important;
+                position: absolute !important;
+                right: 58px !important;
+                top: 19px !important;
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-fixed-top {
+                min-height: 50px !important;
+                padding: 0 !important;
+            }
+
+            .navbar-brand {
+                padding: 5px 15px !important;
+                height: 50px !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+
+            .navbar-brand img {
+                max-height: 40px !important;
+                width: auto !important;
+            }
+
+            .navbar-toggle {
+                display: block !important;
+                margin: 0 !important;
+                padding: 9px 10px !important;
+                position: absolute !important;
+                right: 15px !important;
+                top: 5px !important;
+                z-index: 1001 !important;
+            }
+            
+            .whatsapp-icon-mobile {
+                display: block !important;
+                position: absolute !important;
+                right: 58px !important;
+                top: 5px !important;
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 1000 !important;
+                transition: transform 0.1s linear !important;
+            }
+
+            .navbar-collapse.in ~ .whatsapp-icon-mobile,
+            .navbar-collapse.collapsing ~ .whatsapp-icon-mobile {
+                top: 5px !important;
+            }            
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbarToggle = document.querySelector('.navbar-toggle');
+            var whatsappIcon = document.querySelector('.whatsapp-icon-mobile');
+            var navbar = document.querySelector('.navbar-fixed-top');
+            var lastScrollTop = 0;
+            
+            // Cerrar el menú al hacer clic en cualquier enlace
+            var menuLinks = document.querySelectorAll('.navbar-nav a');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 985) {
+                        navbarToggle.click();
+                    }
+                });
+            });
+            
+            if (navbarToggle && whatsappIcon) {
+                navbarToggle.addEventListener('click', function() {
+                    if (navbarToggle.classList.contains('collapsed')) {
+                        whatsappIcon.style.right = '55px';
+                        whatsappIcon.style.top = '-4px';
+                    } else {
+                        whatsappIcon.style.right = '55px';
+                        whatsappIcon.style.top = '-4px';
+                    }
+                });
+            }
+
+            // Detectar scroll
+            window.addEventListener('scroll', function() {
+                var st = window.pageYOffset || document.documentElement.scrollTop;
+                var windowWidth = window.innerWidth;
+                
+                // Solo mover el ícono si la pantalla es mayor a 766px
+                if (windowWidth > 766) {
+                    if (st > 100 && st > lastScrollTop) {
+                        navbar.classList.add('scrolled');
+                        document.querySelector('.whatsapp-icon-mobile')?.classList.add('scrolled');
+                        document.querySelector('.whatsapp-icon-icon-desktop')?.classList.add('scrolled');
+                    } else if (st <= 100 || st < lastScrollTop) {
+                        navbar.classList.remove('scrolled');
+                        document.querySelector('.whatsapp-icon-mobile')?.classList.remove('scrolled');
+                        document.querySelector('.whatsapp-icon-icon-desktop')?.classList.remove('scrolled');
+                    }
+                }
+                
+                lastScrollTop = st <= 0 ? 0 : st;
+            });
+        });
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top" id="page-top">
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar-fixed-top" id="page-top">
@@ -99,13 +788,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="wrapper">
         <nav class="navbar navbar-dark navbar-fixed-top" role="navigation">
             <div class="container">
-                <div class="navbar-header page-scroll"><button class="navbar-toggle" data-target=".navbar-main-collapse"
-                        data-toggle="collapse" type="button"></button><a class="navbar-brand" href="#page-top"><span
-                            class="logo"><img alt="" src="assets/img/logo.png" /> </span> </a></div>
+                <div class="navbar-header page-scroll">
+                    <button class="navbar-toggle collapsed mobile-only" data-target=".navbar-main-collapse" data-toggle="collapse" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">
+                        <span class="logo"><img alt="" src="assets/img/logo.png" /> </span> 
+                    </a>
+                </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav desktop-only">
                         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                         <li class="hidden"></li>
                         <li class="page-scroll"><a href="#about">Javier</a></li>
@@ -116,9 +812,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="page-scroll"><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
+                <div class="whatsapp-icon-mobile mobile-only" style="float: right; margin: 10px 15px;">
+                    <a href="javascript:void(0)" onclick="document.getElementById('whatsapp-link').click()">
+                        <svg class="whatsapp-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32">
+                            <path fill="#25D366" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="whatsapp-icon-icon-desktop desktop-only">
+                    <a href="javascript:void(0)" onclick="document.getElementById('whatsapp-link').click()">
+                        <svg class="whatsapp-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32">
+                            <path fill="#25D366" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <!-- /.container -->
         </nav>
 
         <header class="intro-img intro-dark-bg" data-stellar-background-ratio="0.5"
@@ -127,7 +835,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="intro-body" data-scrollreveal="move 0">
                 <div class="container">
-                    <div class="intro-welcome">¿Buscas tutoría de matemáticas?</div>
+                    <div class="intro-welcome">¿Buscas tutoría de matemáticas?</div>                    
                     &nbsp;
 
                     <h1 class="brand-heading">Javier<br />
@@ -150,7 +858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
 
                             <div class="item">
-                                <h4>Tutorías bilingües</h4>
+                                <h4>Habla con Javier: +1 585 420 8074</h4>
 
                                 <h5>Ahora en San Juan y Ponce</h5>
                             </div>
@@ -192,7 +900,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </p>
 
                         </ul>
-                        <p>Lleva 18 años enseñando matemáticas (bilingüe) a niños, jovenes y adultos. Es especializado en Educación
+                        <p>Lleva 18 años enseñando matemáticas a niños, jovenes y adultos. Es especializado en Educación
                             de la matemática y Mechanical Engineering. Ha sido becado por la farmac&eacute;utica Bayer
                             en liderazgo. El Sr. Cruz además ha liderado diferentes proyectos educativos y escrito 4
                             libros de matemáticas, con mas de 7500 copias vendidas. </p>
@@ -224,13 +932,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             <hr class="light" />
                             <p data-scrollreveal="enter bottom">Cu&eacute;ntale tu caso, agenda una clase y ahorra
-                                tiempo y dinero evitando nivelaciones y exámenes!</p>
+                                tiempo y dinero evitando niverlaciones y exámenes!</p>
                             <a class="btn btn-outline btn-light btn-lg btn-square"
                                 data-scrollreveal="enter bottom after .5s" href="tel:+1 585-4208074">Llamar</a> <a
                                 class="btn btn-outline btn-light btn-lg btn-square"
                                 data-scrollreveal="enter bottom after .5s"
                                 href="https://api.whatsapp.com/send?phone=15854208074&amp;text=Hola%20Javier!%20vi%20la%20pagina%20javiercruz.co/Pto-Rico%20y%20me%20gustaria%20saber%20como%20funcionan%20las%20clases%20y%20%20el%20precio%20respectivo.."
-                                target="_blank">Whatsappear con Javier</a>
+                                target="_blank" id="whatsapp-link">Whatsappear con Javier</a>
                         </div>
                     </div>
                 </div>
@@ -262,7 +970,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                                 <h3></b>****Junior High & High School**** </b> </h3>
                                 <p>
-                                    <centre><b>Tutorías personalizadas para estudiantes entre 12 y 19 años: (6to a 12)</b>
+                                    <centre><b>Tutorías peronslizadas para estudiantes entre 12 y 19 años: (6to a 12)</b>
                                     </centre>
                                 </p>
                                 <p>Tips de estudio - Consejos para presentación de exámenes - técnicas de
@@ -273,7 +981,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     cuadráticas. </p>
                                 <p> <b>Medio: </b> Álgebra I, Álgebra II, sistemas de ecuaciones, precálculo.</p>
                                 <p> <b>Avanzado: </b> Derivadas, Integrales, Álgebra lineal, matemática financiera.</p>
-                                <p>Más de 2400  tutorías en los últimos 3 años. .</p>
+                                <p>Más de 2400  tutorias en en los ultimos 3 años. .</p>
                                 <h3>Universidades</h3>
 
                                 <p>Matemáticas y Estadística para ingeniería o administración.</p>
@@ -454,32 +1162,18 @@ End Meta Pixel Code -->
                 <div class="row text-center">
                     <div class="col-lg-12" data-scrollreveal="move 0">
                         <h2>Instituciones apoyadas</h2>
-
                         <hr class="light" />
                     </div>
-
                     <div class="col-lg-12" data-scrollreveal="enter bottom">
                         <ul class="text-center" id="clients-carousel">
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/1.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/2.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/3.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/3.6.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/5.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/6.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/7.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/8.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/9.png" /></li>
-                            <li class="item"><img alt="" class="img-responsive"
-                                    src="https://javiercruz.co/USA/assets/img/demo-clients/10.2.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/1.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/2.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/3.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/5.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/6.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/7.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/8.png" /></li>
+                            <li class="item"><img alt="" class="img-responsive" src="img/demo-clients/9.png" /></li>
                         </ul>
                     </div>
                 </div>
@@ -817,7 +1511,10 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                            
+                            <!---->
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -866,19 +1563,13 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel-2"></div>
+                                id="project-details-carousel-2">
+                               
+                                
+                            </div>
                         </div>
 
-                        <div class="col-md-4">
-                            <h3>Project Description:</h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, et, ea, accusantium
-                                reprehenderit aliquam numquam fuga natus fugiat odit distinctio illo at unde.</p>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, iusto molestiae
-                                possimus sint dignissimos! Laudantium, dolore, vel, sint, labore optio perferendis illo
-                                dolorum similique soluta eum cupiditate assumenda consequatur maiores.</p>
-                        </div>
+                        
                     </div>
 
                     <div class="row">
@@ -915,7 +1606,10 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -964,7 +1658,10 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1013,7 +1710,10 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1062,7 +1762,9 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1111,7 +1813,9 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1160,7 +1864,9 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1209,7 +1915,9 @@ End Meta Pixel Code -->
                     <div class="row">
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme project-details-carousel"
-                                id="project-details-carousel"></div>
+                                id="project-details-carousel">
+                                
+                            </div>
                         </div>
 
                         <div class="col-md-4">
@@ -1258,7 +1966,7 @@ End Meta Pixel Code -->
         <script src="assets/js/plugins/isotope/isotope.pkgd.min.js"></script>
         <!-- Spectrum JavaScript Files -->
         <script src="assets/js/spectrum.nav.js"></script>
-        <script src="assets/js/spectrum.js"></script>
+        <script src="assets/js/spectrum.js"></script>        
     </div>
 </body>
 
